@@ -1,31 +1,41 @@
 # NoRisk Datasecurity — Website
 
-Statische Website (vorkompiliert) für NoRisk Datasecurity GmbH.
+Website der NoRisk Datasecurity GmbH.
 
-## Struktur
+## Hosting: WordPress bei Ionos (aktiv)
 
-- `index.html` — Startseite
-- `leistung.html` — Detailseiten für Leistungen & Standards (per URL-Parameter)
-- `impressum.html`, `datenschutz.html` — Rechtsseiten
-- `kontakt.php` — Versand des Kontaktformulars (benötigt PHP-Hosting, z. B. IONOS)
-- `assets/` — Bilder & Logos
-- `vendor/` — mitgelieferte React-Bibliothek (kein CDN nötig)
-- `*.js` — vorkompilierte Skripte
-- `*.css` — Stile
+Die Website läuft als **WordPress-Theme** auf Ionos.
+Das fertige Theme liegt im Ordner `nrds-theme/`.
 
-## Lokal ansehen
+### Setup-Anleitung
 
-Einfach `index.html` im Browser öffnen.
+→ Siehe [`nrds-theme/SETUP-WORDPRESS.md`](nrds-theme/SETUP-WORDPRESS.md)
 
-## Hosting
+### Kurzfassung
 
-Alle Dateien in das Wurzelverzeichnis des Webspace laden (so dass `index.html`
-direkt erreichbar ist). Das Kontaktformular funktioniert nur auf einem Server
-mit PHP-Unterstützung; auf reinem Static-Hosting (z. B. GitHub Pages) zeigt das
-Formular die Seite an, kann aber keine E-Mails versenden.
+1. `nrds-theme/` als ZIP packen und in WordPress hochladen (**Design → Themes**)
+2. 4 Seiten anlegen: `leistungen`, `impressum`, `datenschutz`, Startseite
+3. Startseite festlegen: **Einstellungen → Lesen**
+4. `kontakt.php` per FTP ins WordPress-Wurzelverzeichnis laden
+5. `assets/`-Ordner (Logos, Bilder) per FTP ins Wurzelverzeichnis laden
 
-## Hinweis zu GitHub Pages
+## Repo-Struktur
 
-GitHub Pages unterstützt **kein PHP** — `kontakt.php` läuft dort nicht.
-Für den E-Mail-Versand braucht es PHP-Hosting (IONOS) oder einen externen
-Formular-Dienst.
+| Ordner/Datei | Zweck |
+|---|---|
+| `nrds-theme/` | WordPress-Theme (aktives Hosting) |
+| `nrds-theme/assets/css/` | Alle CSS-Dateien |
+| `nrds-theme/assets/js/` | Alle JS-Dateien (inkl. React-App) |
+| `kontakt.php` | PHP-Mailer für das Kontaktformular |
+| `vendor/` | React 18 (self-hosted, Production Build) |
+| `assets/` | Bilder & Logos (per FTP hochladen) |
+| `.htaccess` | Apache-Konfiguration für Ionos (Sicherheits-Header, HTTPS, Caching) |
+| `wrangler.toml` | *(nur für Cloudflare Pages – wird bei Ionos nicht verwendet)* |
+| `_headers` | *(nur für Cloudflare Pages – wird bei Ionos nicht verwendet)* |
+
+## Lokal vorschauen
+
+```bash
+python3 -m http.server 8080
+# dann http://localhost:8080/index.html aufrufen
+```
