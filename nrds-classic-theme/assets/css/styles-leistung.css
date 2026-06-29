@@ -1,0 +1,196 @@
+/* ============================================================
+   Service detail page (leistung.html) — V3 aesthetic
+   ============================================================ */
+
+.ld-nav { position: fixed; }
+
+.ld-hero {
+  padding: 180px 40px 80px;
+  max-width: 1100px;
+  border-bottom: 1px solid var(--rule);
+}
+.ld-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.ld-hero-n {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  padding: 4px 10px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+}
+.ld-hero-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: clamp(44px, 7vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  margin: 0 0 28px;
+}
+.ld-hero-lead {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+  max-width: 60ch;
+}
+
+.ld-section { padding: 96px 40px; border-bottom: 1px solid var(--rule); }
+.ld-h2 {
+  margin-bottom: 56px !important;
+  max-width: 18ch;
+}
+
+/* Includes */
+.ld-includes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.ld-include {
+  background: var(--bg);
+  padding: 40px;
+}
+.ld-include-n {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.ld-include-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+}
+.ld-include-body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+/* Why */
+.ld-why-section { background: var(--bg-2); }
+.ld-why {
+  display: flex;
+  flex-direction: column;
+}
+.ld-why-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 28px;
+  padding: 32px 0;
+  border-top: 1px solid var(--rule);
+  align-items: start;
+}
+.ld-why-item:last-child { border-bottom: 1px solid var(--rule); }
+.ld-why-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+.ld-why-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.015em;
+  margin: 0 0 10px;
+}
+.ld-why-body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin: 0;
+  max-width: 64ch;
+}
+
+/* CTA */
+.ld-cta {
+  padding: 96px 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+}
+.ld-cta-text {
+  font-family: "Jost", sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 auto 32px;
+  max-width: 22ch;
+}
+.ld-cta-btn { font-size: 15px; }
+
+/* Other services */
+.ld-other { padding: 80px 40px 120px; }
+.ld-other-label { margin-bottom: 32px; }
+.ld-other-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.ld-other-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px;
+  border: 1px solid var(--rule);
+  background: var(--bg-2);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.ld-other-card:hover { background: var(--bg-3); border-color: var(--accent); }
+.ld-other-n {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+.ld-other-title {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.ld-other-arrow { margin-left: auto; color: var(--ink-3); transition: transform 0.2s; }
+.ld-other-card:hover .ld-other-arrow { transform: translateX(4px); color: var(--accent); }
+
+@media (max-width: 880px) {
+  .ld-hero { padding: 130px 20px 60px; }
+  .ld-section { padding: 64px 20px; }
+  .ld-includes { grid-template-columns: 1fr; }
+  .ld-include { padding: 28px 20px; }
+  .ld-why-item { grid-template-columns: 1fr; gap: 14px; }
+  .ld-cta { padding: 64px 20px; }
+  .ld-other { padding: 56px 20px 90px; }
+  .ld-other-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .ld-hero { padding: 104px 16px 48px; }
+  .ld-hero-title { font-size: clamp(34px, 11vw, 48px); line-height: 1.0; }
+  .ld-hero-lead { font-size: 17px; }
+  .ld-section { padding: 48px 16px; }
+  .ld-include { padding: 24px 18px; }
+  .ld-cta { padding: 48px 16px; }
+  .ld-other { padding: 48px 16px 80px; }
+}
