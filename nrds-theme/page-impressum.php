@@ -1,0 +1,97 @@
+<?php
+/**
+ * Template für die Seite mit dem Slug "impressum"
+ */
+get_header();
+$img = get_template_directory_uri() . '/assets/images';
+?>
+
+<nav class="legal-nav">
+  <a class="legal-nav-logo" href="<?php echo home_url('/'); ?>" aria-label="NoRisk Datasecurity — Startseite">
+    <img class="wm-dark"  src="<?php echo $img; ?>/logo-dark.png"  alt="NoRisk Datasecurity" />
+    <img class="wm-light" src="<?php echo $img; ?>/logo-light.png" alt="NoRisk Datasecurity" />
+  </a>
+  <div class="legal-nav-r">
+    <button class="legal-theme" type="button" aria-label="Hell/Dunkel umschalten">◑</button>
+    <a class="legal-back" href="<?php echo home_url('/'); ?>">
+      <span class="arrow">←</span> Zur Startseite
+    </a>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+  <div class="legal-eyebrow">Rechtliches</div>
+  <h1 class="legal-h1">Impressum</h1>
+  <p class="legal-lede">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz) sowie § 18 Abs. 2 MStV.</p>
+  <div class="legal-updated">Stand: Mai 2026</div>
+
+  <section class="legal-section">
+    <h2><span class="num">01</span> Diensteanbieter</h2>
+    <div class="legal-card">
+      <div class="row"><div class="k">Firma</div><div class="v">NoRisk Datasecurity GmbH</div></div>
+      <div class="row"><div class="k">Anschrift</div><div class="v">Am Windhügel 17A<br />59457 Werl<br />Deutschland</div></div>
+      <div class="row"><div class="k">Vertreten durch</div><div class="v">Geschäftsführer Marcel Schwickert</div></div>
+    </div>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">02</span> Kontakt</h2>
+    <div class="legal-card">
+      <div class="row"><div class="k">Telefon</div><div class="v">+49 2922 80 33 707</div></div>
+      <div class="row"><div class="k">E-Mail</div><div class="v"><a href="mailto:info@norisk-datasecurity.com">info@norisk-datasecurity.com</a></div></div>
+      <div class="row"><div class="k">Web</div><div class="v">www.norisk-datasecurity.com</div></div>
+    </div>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">03</span> Registereintrag</h2>
+    <div class="legal-card">
+      <div class="row"><div class="k">Registergericht</div><div class="v">Amtsgericht Arnsberg</div></div>
+      <div class="row"><div class="k">Registernummer</div><div class="v">HRB 11714</div></div>
+    </div>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">04</span> Umsatzsteuer-ID</h2>
+    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
+    <p>DE421990537</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">05</span> Redaktionell verantwortlich</h2>
+    <p>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</p>
+    <p>Marcel Schwickert<br />Am Windhügel 17A, 59457 Werl</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">06</span> EU-Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">07</span> Haftung für Inhalte</h2>
+    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+    <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">08</span> Haftung für Links</h2>
+    <p>Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2><span class="num">09</span> Urheberrecht</h2>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+  </section>
+</main>
+
+<footer class="legal-footer">
+  <div>© 2026 NoRisk Datasecurity GmbH</div>
+  <div class="links">
+    <a href="<?php echo home_url('/'); ?>">Startseite</a>
+    <a href="<?php echo esc_url(nrds_page_url('datenschutz')); ?>">Datenschutzerklärung</a>
+  </div>
+</footer>
+
+<?php get_footer(); ?>

@@ -1,0 +1,14 @@
+/*
+Theme Name: NoRisk Datasecurity
+Theme URI: https://www.norisk-datasecurity.com
+Author: NoRisk Datasecurity GmbH
+Author URI: https://www.norisk-datasecurity.com
+Description: Custom WordPress-Theme für die NoRisk Datasecurity GmbH — Datenschutz, IT-Sicherheit und KI-Beratung.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+License: Proprietary
+Text Domain: nrds
+*/
+
+/* Styles werden über functions.php eingebunden – diese Datei dient nur als Theme-Deklaration */
