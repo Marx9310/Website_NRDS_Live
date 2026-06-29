@@ -1,0 +1,262 @@
+/* ============================================================
+   Legal pages — Impressum & Datenschutz
+   Matched to website style 03 (Variant 3). Light is the default
+   (mirrors the site's default); .nr-dark on <body> switches to dark.
+   Theme is read from localStorage so it follows the main site.
+   ============================================================ */
+
+:root {
+  /* Neutral grey-white (default) — matches homepage */
+  --bg: #fbfbfc;
+  --bg-2: #f2f2f4;
+  --bg-3: #e7e7ea;
+  --ink: #131316;
+  --ink-2: #3a3a40;
+  --ink-3: #76767c;
+  --accent: #44444b;
+  --rule: rgba(19, 19, 22, 0.16);
+  --note-bg: rgba(19, 19, 22, 0.05);
+  --note-bd: rgba(19, 19, 22, 0.18);
+  --note-ink: #3a3a40;
+  --todo-bg: rgba(19, 19, 22, 0.07);
+  --todo-bd: rgba(19, 19, 22, 0.3);
+  --todo-ink: #3a3a40;
+}
+body.nr-dark {
+  /* Neutral dark grey — matches homepage */
+  --bg: #0e0e10;
+  --bg-2: #161618;
+  --bg-3: #1f1f22;
+  --ink: #f3f3f4;
+  --ink-2: #c2c2c6;
+  --ink-3: #76767c;
+  --accent: #bcbcc4;
+  --rule: rgba(243, 243, 244, 0.14);
+  --note-bg: rgba(243, 243, 244, 0.06);
+  --note-bd: rgba(243, 243, 244, 0.2);
+  --note-ink: #c2c2c6;
+  --todo-bg: rgba(243, 243, 244, 0.08);
+  --todo-bd: rgba(243, 243, 244, 0.28);
+  --todo-ink: #e3e3e6;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Jost", "Inter Tight", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+}
+a { color: inherit; }
+
+.legal-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--rule);
+}
+.legal-nav-logo img { height: 56px; width: auto; display: block; }
+/* logo: light variant only on dark bg */
+.legal-nav-logo .wm-light { display: none; }
+body.nr-dark .legal-nav-logo .wm-dark { display: none; }
+body.nr-dark .legal-nav-logo .wm-light { display: block; }
+.legal-nav-r {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.legal-theme {
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-2);
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  font-size: 17px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: border-color 0.2s, color 0.2s;
+}
+.legal-theme:hover { border-color: var(--ink); color: var(--ink); }
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.legal-back:hover { color: var(--ink); }
+.legal-back .arrow { transition: transform 0.2s; }
+.legal-back:hover .arrow { transform: translateX(-3px); }
+
+.legal-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 80px 40px 120px;
+}
+
+.legal-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.legal-h1 {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  margin: 0 0 16px;
+}
+.legal-lede {
+  font-size: 18px;
+  color: var(--ink-2);
+  margin: 0 0 12px;
+  max-width: 60ch;
+}
+.legal-updated {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+  padding-bottom: 40px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.legal-section { margin-bottom: 48px; }
+.legal-section h2 {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.legal-section h2 .num {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  font-weight: 400;
+}
+.legal-section h3 {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 28px 0 10px;
+  letter-spacing: -0.01em;
+}
+.legal-section p,
+.legal-section li {
+  font-size: 16px;
+  color: var(--ink-2);
+  margin: 0 0 14px;
+}
+.legal-section ul { padding-left: 0; list-style: none; }
+.legal-section ul li { position: relative; padding-left: 24px; }
+.legal-section ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.legal-section strong { color: var(--ink); font-weight: 500; }
+.legal-section a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.legal-section a:hover { border-bottom-color: var(--accent); }
+
+.legal-card {
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+  padding: 28px 32px;
+  margin: 8px 0 24px;
+}
+.legal-card .row {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.legal-card .row:last-child { border-bottom: 0; }
+.legal-card .k {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.legal-card .v { color: var(--ink); }
+
+.todo {
+  display: inline;
+  background: var(--todo-bg);
+  border-bottom: 1px dashed var(--todo-bd);
+  color: var(--todo-ink);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+}
+
+.legal-note {
+  margin-top: 64px;
+  padding: 24px 28px;
+  background: var(--note-bg);
+  border: 1px solid var(--note-bd);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--note-ink);
+}
+.legal-note strong { color: var(--todo-ink); }
+
+.legal-footer {
+  border-top: 1px solid var(--rule);
+  padding: 32px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--ink-3);
+}
+.legal-footer a { color: var(--ink-2); text-decoration: none; }
+.legal-footer a:hover { color: var(--ink); }
+.legal-footer .links { display: flex; gap: 24px; }
+
+@media (max-width: 720px) {
+  .legal-nav { padding: 14px 20px; }
+  .legal-nav-logo img { height: 40px; }
+  .legal-wrap { padding: 56px 20px 80px; }
+  .legal-card .row { grid-template-columns: 1fr; gap: 4px; }
+}
