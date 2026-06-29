@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leistung — NoRisk Datasecurity</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles-base.css" />
+  <link rel="stylesheet" href="styles-v3.css" />
+  <link rel="stylesheet" href="styles-gray.css" />
+  <link rel="stylesheet" href="styles-leistung.css" />
+
+  <style>
+    .global-toolbar {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 80;
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 6px;
+      background: rgba(10, 12, 14, 0.92);
+      backdrop-filter: blur(16px);
+      border-radius: 999px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(255, 255, 255, 0.06);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: #ecebe5;
+      text-transform: uppercase;
+    }
+    .gt-group { display: inline-flex; align-items: center; padding: 0 4px; }
+    .gt-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.12); margin: 0 2px; }
+    .global-toolbar button {
+      background: transparent; border: 0; color: inherit;
+      padding: 8px 12px; border-radius: 999px; letter-spacing: 0.18em;
+      font-family: inherit; font-size: inherit; opacity: 0.5;
+      transition: opacity 0.2s, background 0.2s, color 0.2s;
+    }
+    .global-toolbar button:hover { opacity: 0.9; }
+    .global-toolbar button.is-on { background: #ecebe5; color: #0a0c0e; opacity: 1; }
+    .gt-theme { padding: 6px 12px !important; font-size: 16px !important; letter-spacing: 0 !important; }
+    .gt-version {
+      display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px;
+      color: #ecebe5; text-decoration: none; border-radius: 999px;
+      letter-spacing: 0.16em; opacity: 0.85; transition: opacity 0.2s, background 0.2s;
+    }
+    .gt-version:hover { opacity: 1; background: rgba(255,255,255,0.08); }
+
+    .boot {
+      position: fixed; inset: 0; background: #ebe8df;
+      display: grid; place-items: center; z-index: 999; transition: opacity 0.5s ease;
+    }
+    body.gray .boot { background: #fbfbfc; }
+    .boot.is-gone { opacity: 0; pointer-events: none; }
+    .boot-mark {
+      font-family: "IBM Plex Mono", monospace; font-size: 11px;
+      letter-spacing: 0.3em; color: rgba(22,20,15,0.45); text-transform: uppercase;
+    }
+
+    @media (max-width: 720px) {
+      .global-toolbar { font-size: 9px; padding: 4px; }
+      .global-toolbar button { padding: 7px 9px; }
+    }
+  </style>
+
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="400" fill="#0a0c0e"/>
+      <text x="200" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="60" fill="#ecebe5" letter-spacing="-2">NoRisk</text>
+      <rect x="120" y="220" width="100" height="6" fill="#ecebe5"/>
+      <text x="230" y="232" font-family="monospace" font-size="14" fill="#ecebe5" letter-spacing="3">DATASEC</text>
+    </svg>
+  </template>
+</head>
+<body class="gray">
+  <div class="boot"><div class="boot-mark">NoRisk · loading</div></div>
+  <div id="root"></div>
+  <!-- React (self-hosted, production build) -->
+  <script src="vendor/react.js"></script>
+  <script src="vendor/react-dom.js"></script>
+
+  <script src="content.js"></script>
+  <script src="shared.js"></script>
+  <script src="leistung.js"></script>
+</body>
+</html>
