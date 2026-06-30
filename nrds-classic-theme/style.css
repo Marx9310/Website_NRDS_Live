@@ -8,6 +8,62 @@ Requires at least: 6.0
 Text Domain: nrds
 */
 
+/* ---- Global toolbar (DE/EN + dark/light) ---- */
+.global-toolbar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--rule);
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+.gt-group {
+  display: flex;
+  gap: 2px;
+}
+.gt-lang {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  color: var(--ink-3);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.gt-lang.is-on,
+.gt-lang:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+.gt-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--rule);
+  margin: 0 4px;
+}
+.gt-theme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--ink-2);
+  padding: 2px 4px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.gt-theme:hover { color: var(--ink); }
+
 /* ---- Reveal animation ---- */
 .reveal {
   opacity: 0;

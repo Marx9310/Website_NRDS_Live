@@ -33,9 +33,14 @@
     });
   }
 
+  /* ---- Cookie helper ---- */
+  function setCookie(name, value, days) {
+    var expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = name + '=' + value + '; expires=' + expires + '; path=/';
+  }
+
   /* ---- Dark / light toggle ---- */
   function initTheme() {
-    var stored = localStorage.getItem('nrds-theme');
     var body = document.body;
 
     function applyTheme(dark) {
@@ -46,16 +51,20 @@
         body.classList.add('v3-light');
         body.classList.remove('v3-dark');
       }
+      var btn = document.getElementById('nrds-theme-toggle');
+      if (btn) btn.textContent = dark ? '◑' : '◐';
     }
 
-    applyTheme(stored !== 'light');
-
+    // Theme is already set server-side via cookie; just sync the icon
+    var isDark = body.classList.contains('v3-dark');
     var btn = document.getElementById('nrds-theme-toggle');
+    if (btn) btn.textContent = isDark ? '◑' : '◐';
+
     if (btn) {
       btn.addEventListener('click', function () {
-        var isDark = body.classList.contains('v3-dark');
-        applyTheme(!isDark);
-        localStorage.setItem('nrds-theme', isDark ? 'light' : 'dark');
+        var nowDark = body.classList.contains('v3-dark');
+        applyTheme(!nowDark);
+        setCookie('nrds-theme', nowDark ? 'light' : 'dark', 365);
       });
     }
   }

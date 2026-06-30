@@ -1,6 +1,15 @@
 <?php
+// Language switching: ?lang=de or ?lang=en sets cookie and redirects
+if (isset($_GET['lang']) && in_array($_GET['lang'], ['de', 'en'])) {
+    setcookie('nrds-lang', $_GET['lang'], time() + 60 * 60 * 24 * 365, '/');
+    wp_redirect(home_url('/'));
+    exit;
+}
+
 get_header();
-$d   = nrds_data();
+// $nrds_lang is set in header.php before get_header() renders it
+$lang = (isset($_COOKIE['nrds-lang']) && $_COOKIE['nrds-lang'] === 'en') ? 'en' : 'de';
+$d   = nrds_data($lang);
 $img = get_template_directory_uri() . '/assets/images';
 $nav = $d['nav'];
 $c   = $d;
@@ -16,6 +25,16 @@ $leistungen_url  = nrds_page_url('leistungen');
 $impressum_url   = nrds_page_url('impressum');
 $datenschutz_url = nrds_page_url('datenschutz');
 ?>
+
+<!-- ======== TOOLBAR ======== -->
+<div class="global-toolbar">
+  <div class="gt-group">
+    <a href="<?php echo home_url('/?lang=de'); ?>" class="gt-lang <?php echo $lang === 'de' ? 'is-on' : ''; ?>">DE</a>
+    <a href="<?php echo home_url('/?lang=en'); ?>" class="gt-lang <?php echo $lang === 'en' ? 'is-on' : ''; ?>">EN</a>
+  </div>
+  <div class="gt-divider"></div>
+  <button class="gt-theme" id="nrds-theme-toggle" title="Toggle dark/light mode">◑</button>
+</div>
 
 <!-- ======== NAV ======== -->
 <header class="v3-nav" id="top">
